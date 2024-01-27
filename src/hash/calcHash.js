@@ -10,7 +10,6 @@ const calculateHash = async () => {
     path.join(dirname(filename), "files", "fileToCalculateHashFor.txt")
   ).on("data", (data) => {
     const hash = createHash("sha256");
-    hash.update(data);
     console.log(hash.update(data).digest("hex"));
   });
 };
